@@ -1,7 +1,5 @@
 import Login from "./Login";
 import logo from "../assets/logo.png"
-import Forget from "./Forget";
-import Register from "./Register";
 export default function Auth() {
     return(
         <>
@@ -13,7 +11,7 @@ export default function Auth() {
 
         </div>
         <div className="flex w-full h-full items-center">
-            <Register/>
+            <Login/>
         </div>
         </div>
         </>
