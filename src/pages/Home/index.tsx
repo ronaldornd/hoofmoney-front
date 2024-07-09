@@ -1,10 +1,10 @@
-import grafico from "../../assets/grafico.png";
 import upArrow from "../../assets/up-arrow.png";
 import downArrow from "../../assets/down-arrow.png";
 import home from "../../assets/home.png";
 import Header from "../Header";
 import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Chart } from 'chart.js';
 import { Doughnut, Line } from 'react-chartjs-2';
+import { Button } from "@/components/ui/button";
 
 // Registrando os componentes necessários
 Chart.register(
@@ -403,8 +403,61 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="flex flex-row gap-2 h-max w-full p-2">
-                                <div className="h-10 w-full border rounded border-green-500"></div>
-                                <div className="h-10 w-full border rounded border-red-500"></div>
+                                <div className="flex flex-col h-max w-full border rounded border-green-500 bg-green-100 items-center">
+                                    <h1 className="absolute m-2">Ultimas Receitas</h1>
+                                    <div className="flex flex-col mt-8 w-full h-full items-center p-2">
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Tesouro Direto</p>
+                                            <p className="">R$ 500,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">CDB</p>
+                                            <p className="">R$ 500,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Salário</p>
+                                            <p className="">R$ 2.500,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Freelancer</p>
+                                            <p className="">R$  500,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="text-9">Renda de Aluguel</p>
+                                            <p className="text-1-0">R$ 1.000,00</p>
+                                        </div>
+                                    </div>
+                                    <Button type="submit" className="w-max px-5 m-2 text-lg border-2 border-green-500 bg-green-300 text-black">Nova Receita</Button>
+
+                                </div>
+                                <div className="flex flex-col h-max w-full border rounded border-red-500 bg-red-100 items-center">
+                                    <h1 className="absolute m-2">Ultimas Despesas</h1>
+
+                                    <div className="flex flex-col mt-8 w-full h-full items-center p-2">
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Aluguel</p>
+                                            <p className="">R$ 800,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Condomínio: </p>
+                                            <p className="">R$ 200,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Luz: </p>
+                                            <p className="">R$ 100,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Água: </p>
+                                            <p className="">R$ 50,00</p>
+                                        </div>
+                                        <div className="flex flex-row w-full justify-between ">
+                                            <p className="">Internet: </p>
+                                            <p className="">R$ 100,00</p>
+                                        </div>
+                                    </div>
+                                    <Button type="submit" className="w-max px-5 m-2 text-lg border-2 border-red-500 bg-red-300 hover:bg-red-500 text-black">Nova Despesa</Button>
+
+                                </div>
 
                             </div>
 
