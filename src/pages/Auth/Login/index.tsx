@@ -30,18 +30,18 @@ export default function Login() {
     };
 
     const [email, setEmail] = useState('');
-    const [isEmailValid, setIsEmailValid] = useState(false); // Passo 1
+    const [isEmailValid, setIsEmailValid] = useState(false);
 
-    // Passo 2: Definir uma função de validação
-    const validateEmail = (email) => {
+    // Definir uma função de validação
+    const validateEmail = (email: string) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
         return re.test(String(email).toLowerCase());
     };
 
-    const handleEmailChange = (e) => {
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const emailValue = e.target.value;
         setEmail(emailValue);
-        // Passo 3: Chamar a função de validação
+        // Chamar a função de validação
         setIsEmailValid(validateEmail(emailValue));
     };
     return (
