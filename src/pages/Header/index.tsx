@@ -3,6 +3,10 @@ import cash from "../../assets/cash.png"
 import menu from "../../assets/menu.png"
 
 export default function Header() {
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.reload();
+    };
     return (
         <>
             <div className="flex flex-row w-ful justify-between bg-gradient-to-r from-70% from-green-600 to-white">
@@ -25,9 +29,12 @@ export default function Header() {
                             <p>1,500 </p>
                         </div>
                     </div>
-                    <div>
-                        <img src={user} alt="" />
-                    </div>
+                    {/*link para logout*/}
+                    <a onClick={handleLogout}>
+                        <div>
+                            <img src={user} alt="" />
+                        </div>
+                    </a>
                 </div>
             </div>
         </>

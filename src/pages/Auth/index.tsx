@@ -1,5 +1,5 @@
 import Login from "./Login";
-import logo from "../assets/logo.png"
+import logo from "../../assets/logo.png"
 import Register from "./Register";
 import Forget from "./Forget";
 export default function Auth() {
