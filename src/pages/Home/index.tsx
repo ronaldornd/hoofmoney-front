@@ -1,10 +1,10 @@
-import upArrow from "../../assets/up-arrow.png";
+import { Button } from "@/components/ui/button";
+import { ArcElement, CategoryScale, Chart, Legend, LineElement, LinearScale, PointElement, Title, Tooltip } from 'chart.js';
+import { Doughnut, Line } from 'react-chartjs-2';
 import downArrow from "../../assets/down-arrow.png";
 import home from "../../assets/home.png";
+import upArrow from "../../assets/up-arrow.png";
 import Header from "../Header";
-import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Chart } from 'chart.js';
-import { Doughnut, Line } from 'react-chartjs-2';
-import { Button } from "@/components/ui/button";
 
 // Registrando os componentes necessários
 Chart.register(
@@ -114,33 +114,32 @@ function DoughnutChart() {
 export default function Home() {
     return (
         <>
-            <div>
+            <div className="flex flex-col h-max w-screen md:h-screen">
 
-                <div><Header /></div>
-                <div className="grid grid-flow-col grid-cols-1 grid-rows-4 row-auto lg:grid-flow-row lg:grid-cols-3 lg:grid-rows-2 p-2 gap-2 w-full h-full content-center">
-                    <div className="flex flex-row gap-2 lg:col-span-3">
+                <div className="w-screen h-max"><Header /></div>
+                <div className="flex flex-col md:grid grid-flow-col lg:grid-flow-row lg:grid-cols-3 p-2 gap-2 h-max w-full md:h-full justify-center">
+                    <div className="flex flex-col md:flex-row gap-2 lg:col-span-3">
                         <div className="row-span-1 flex flex-col text-center h-full w-full border rounded border-black">
-                            <h1 className="w-full">Estatisticas de Gastos</h1>
+                            <h1 className="md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold leading-tight p-1 w-full">Estatisticas de Gastos</h1>
                             <div className="flex flex-row w-full h-full items-center">
-                                <div className="flex flex-col h-full w-max">
-                                    <div className="flex w-full h-full justify-center items-center p-5">
+                                <div className="flex flex-col h-full gap-2 p-2 w-max items-center">
+                                    <div className="flex w-max h-full justify-center items-center">
                                         <div className="w-48">
                                             <DoughnutChart />
                                         </div>
                                         <div className="absolute">
-                                            <h1>Limite de Gastos</h1>
-                                            <h1>R$ 1.500,00</h1>
+                                            <h1 className="md:text-md lg:text-lg xl:text-xl 2xl:text-2xl w-full">Limite de Gastos</h1>
+                                            <h1 className="md:text-md lg:text-lg xl:text-xl 2xl:text-2xl w-full">R$ 1.500,00</h1>
                                             <button className="px-3 bg-green-500 rounded">Editar</button>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col text-center w-full h-max">
-                                        <p>Limite Disponivel:</p>
-                                        <p>R$ 900,00</p>
+                                    <div className="flex flex-row text-center w-max h-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Limite Disponivel:</p>
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 900,00</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-col h-full w-full justify-center items-center mx-3">
-                                    <h1 className="flex h-max">
-
+                                <div className="flex flex-col h-full w-full justify-center items-center p-2 mx-3">
+                                    <h1 className="md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold leading-tight p-1 w-full">
                                         Dados
                                     </h1>
                                     <div className="flex flex-col gap-2 h-fit w-max content-between items-center">
@@ -155,7 +154,9 @@ export default function Home() {
                         </div>
                         <div className="row-span-1 flex flex-col text-center h-full lg:w-max border rounded border-black">
                             <div>
-                                <h1 className="w-full">Gastos Programados</h1>
+                                <h1 className="md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold leading-tight p-1 w-full">
+                                    Gastos Programados
+                                </h1>
                             </div>
                             <div className="flex flex-col h-full gap-2 items-center justify-between">
                                 <div className="flex flex-row w-max gap-14 h-max justify-between px-2">
@@ -195,193 +196,195 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row-span-1 flex flex-col text-center h-full lg:w-max border rounded border-black">
-                            <h1 className="">Investimentos</h1>
-                            <div className="flex flex-row p-1 gap-2 w-max h-full justify-between">
-                                <div className="flex flex-col justify-between px-2">
-                                    <p className="flex flex-row gap-2 justify-center"><img src={upArrow} alt="" />Alta</p>
+                        <div className="row-span-1 flex flex-col text-center h-full w-full border rounded border-black items-center">
+                            <h1 className="md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold leading-tight p-1 w-max">
+                                Investimentos
+                            </h1>
+                            <div className="flex flex-row p-1 gap-2 w-full h-full justify-center">
+                                <div className="flex flex-col w-full justify-between items-center px-2">
+                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max flex flex-row gap-2 justify-center"><img src={upArrow} alt="" />Alta</p>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             DOHL3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +99,411%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
 
                                             AMBP3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +59,26%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             CEEB6:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +31,31%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             ZAMP3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +21,82%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             SMTO3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +20,55%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             BRFS3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +19,07%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             SUZB3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +15,69%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             STBP3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +13,94%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             VSTE3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-green-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-green-500">
                                                 +13,55%
                                             </p>
                                         </div>
                                     </div>
 
                                 </div>
-                                <div className="flex flex-col justify-between px-2">
-                                    <p className="flex flex-row gap-2 justify-center">Queda<img src={downArrow} alt="" /></p>
+                                <div className="flex flex-col w-full justify-between items-center px-2">
+                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max flex flex-row gap-2 justify-center">Queda<img src={downArrow} alt="" /></p>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             DOHL3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +99,411%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
 
                                             AMBP3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +59,26%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             CEEB6:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +31,31%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             ZAMP3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +21,82%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             SMTO3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +20,55%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             BRFS3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +19,07%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             SUZB3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +15,69%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             STBP3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +13,94%
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex flex-row justify-between gap-3 w-full" >
-                                        <h1 className="w-max">
+                                        <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">
                                             VSTE3:
-                                        </h1>
+                                        </p>
                                         <div className="flex flex-row gap-1 w-max">
-                                            <p className="text-red-500">
+                                            <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full text-red-500">
                                                 +13,55%
                                             </p>
                                         </div>
@@ -393,7 +396,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-row col-span-1 lg:col-span-3 w-full h-full">
+                    <div className="flex flex-row col-span-1 lg:col-span-3 w-full h-max">
                         <div className="flex flex-col gap-1 p-2 h-full w-full border rounded border-black">
                             <div className="flex flex-col h-max w-full items-center rounded">
                                 <h1 className="flex w-max">Historico mensal</h1>
@@ -403,60 +406,65 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="flex flex-row gap-2 h-max w-full p-2">
-                                <div className="flex flex-col h-max w-full border rounded border-green-500 bg-green-100 items-center">
-                                    <h1 className="absolute m-2">Ultimas Receitas</h1>
-                                    <div className="flex flex-col mt-8 w-full h-full items-center p-2">
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Tesouro Direto</p>
-                                            <p className="">R$ 500,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">CDB</p>
-                                            <p className="">R$ 500,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Salário</p>
-                                            <p className="">R$ 2.500,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Freelancer</p>
-                                            <p className="">R$  500,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="text-9">Renda de Aluguel</p>
-                                            <p className="text-1-0">R$ 1.000,00</p>
+                                <div className="flex w-full overflow-x-auto snap-x snap-mandatory gap-2 md:flex-row">
+                                    <div className="snap-start w-full md:w-1/2 flex-shrink-0">
+                                        <div className="flex flex-col h-max w-full border rounded border-green-500 bg-green-100 items-center">
+                                            <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight p-1 m-2">Ultimas Receitas</h1>
+                                            <div className="flex flex-col w-full h-full items-center p-2">
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Tesouro Direto</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 500,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">CDB</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 500,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Salário</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 2.500,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Freelancer</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$  500,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full" className="text-9">Renda de Aluguel</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full" className="text-1-0">R$ 1.000,00</p>
+                                                </div>
+                                            </div>
+                                            <Button type="submit" className="w-max px-5 m-2 text-lg border-2 border-green-500 bg-green-300 text-black">Nova Receita</Button>
+
                                         </div>
                                     </div>
-                                    <Button type="submit" className="w-max px-5 m-2 text-lg border-2 border-green-500 bg-green-300 text-black">Nova Receita</Button>
+                                    <div className="snap-start w-full md:w-1/2 flex-shrink-0">
+                                        <div className="flex flex-col h-max w-full border rounded border-red-500 bg-red-100 items-center">
+                                            <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight p-1 m-2">Ultimas Despesas</h1>
+                                            <div className="flex flex-col w-full h-full items-center p-2">
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Aluguel</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 800,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Condomínio: </p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 200,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Luz: </p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 100,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Água: </p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 50,00</p>
+                                                </div>
+                                                <div className="flex flex-row w-full justify-between ">
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Internet: </p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 100,00</p>
+                                                </div>
+                                            </div>
+                                            <Button type="submit" className="w-max px-5 m-2 text-lg border-2 border-red-500 bg-red-300 hover:bg-red-500 text-black">Nova Despesa</Button>
 
-                                </div>
-                                <div className="flex flex-col h-max w-full border rounded border-red-500 bg-red-100 items-center">
-                                    <h1 className="absolute m-2">Ultimas Despesas</h1>
-
-                                    <div className="flex flex-col mt-8 w-full h-full items-center p-2">
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Aluguel</p>
-                                            <p className="">R$ 800,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Condomínio: </p>
-                                            <p className="">R$ 200,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Luz: </p>
-                                            <p className="">R$ 100,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Água: </p>
-                                            <p className="">R$ 50,00</p>
-                                        </div>
-                                        <div className="flex flex-row w-full justify-between ">
-                                            <p className="">Internet: </p>
-                                            <p className="">R$ 100,00</p>
                                         </div>
                                     </div>
-                                    <Button type="submit" className="w-max px-5 m-2 text-lg border-2 border-red-500 bg-red-300 hover:bg-red-500 text-black">Nova Despesa</Button>
-
                                 </div>
 
                             </div>

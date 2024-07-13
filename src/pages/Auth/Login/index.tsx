@@ -49,12 +49,14 @@ export default function Login() {
     };
     return (
         <>
-            <div className="flex flex-col md:flex-row w-screen md:h-screen items-center">
+            <div className="flex flex-col-reverse my-10 md:my-0 gap-10 content-center items-center justify-center md:flex-row w-screen md:h-max  ">
 
-                <div className="flex flex-col gap-2 w-full h-full p-10 justify-center items-center">
-                    <img src={logo} alt="logo da empresa Hoof Money" className="w-96 h-96 m-10 mb-0" />
-                    <h1 className="font-semibold text-xl text-center w-full h-max">“Gerenciando seu futuro financeiro”</h1>
-                    <div className="flex flex-row w-full h-max gap-3 text-center items-center justify-center">
+                <div className="flex flex-col p-4 w-full h-max justify-center items-center">
+                    <div className='flex flex-col gap-2 items-center justify-between w-30 h-max'>
+                        <img src={logo} alt="logo da empresa Hoof Money" className=" w-28 h-full md:w-96 md:h-96 md:m-10 mb-0" />
+                        <h1 className="font-semibold text-xl text-center w-full h-max">“Gerenciando seu futuro financeiro”</h1>
+                    </div>
+                    <div className="flex flex-row w-full md:h-max gap-3 text-center items-center justify-center">
                         <a className='flex flex-col w-max items-center h-max gap-1'>
                             <img className='h-8 w-8' src={instagram} alt="Logo do Instagram" />
                             <p>Siga-nos</p>
@@ -69,7 +71,7 @@ export default function Login() {
                         </a>
                     </div>
                 </div>
-                <div className="flex flex-col gap-5 w-full h-max items-center">
+                <div className="flex flex-col gap-5 w-full md:h-max items-center">
                     <h1 className="font-semibold text-2xl">Faça login na sua conta</h1>
                     <div className="flex flex-col w-full items-center">
 
