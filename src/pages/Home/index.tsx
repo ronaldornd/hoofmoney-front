@@ -47,11 +47,19 @@ function LineChart() {
     const options = {
         responsive: true,
         maintainAspectRatio: false, // Isso permite que o gráfico se estique para preencher a div
+        
         scales: {
             y: {
+                    ticks: {
+                        // Include a dollar sign in the ticks
+                        callback: function(value, index, ticks) {
+                            return 'R$ ' + value;
+                        }
+                    },
                 beginAtZero: true,
             },
         },
+        
     };
     return (
         <div>
@@ -406,7 +414,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="flex flex-row gap-2 h-max w-full p-2">
-                                <div className="flex w-full overflow-x-auto snap-x snap-mandatory gap-2 md:flex-row">
+                                <div className="flex w-full p-2 overflow-x-auto snap-x snap-mandatory gap-2 md:flex-row">
                                     <div className="snap-start w-full md:w-1/2 flex-shrink-0">
                                         <div className="flex flex-col h-max w-full border rounded border-green-500 bg-green-100 items-center">
                                             <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight p-1 m-2">Ultimas Receitas</h1>
@@ -428,8 +436,8 @@ export default function Home() {
                                                     <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$  500,00</p>
                                                 </div>
                                                 <div className="flex flex-row w-full justify-between ">
-                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full" className="text-9">Renda de Aluguel</p>
-                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-full" className="text-1-0">R$ 1.000,00</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">Renda de Aluguel</p>
+                                                    <p className="text-sm md:text-sm xl:text-sm 2xl:text-xl w-max">R$ 1.000,00</p>
                                                 </div>
                                             </div>
                                             <Button type="submit" className="w-max px-5 m-2 text-lg border-2 border-green-500 bg-green-300 text-black">Nova Receita</Button>

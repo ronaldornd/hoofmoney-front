@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importe o Routes
-import Home from './pages/Home';
+import { useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'; // Importe o Routes
 import Forget from './pages/Auth/Forget';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
+import Home from './pages/Home';
 
 function App() {
-    const [logged, setLogged] = useState(() => {
+    const [logged] = useState(() => {
         const token = localStorage.getItem('token');
         return !!token; // Retorna true se token existir, false caso contrário
     });
