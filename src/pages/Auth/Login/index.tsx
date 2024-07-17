@@ -85,7 +85,7 @@ export default function Login() {
                     <h1 className="w-full text-center text-3xl font-extralight">- OU -</h1>
                     <div className="w-full text-center">
                         <h1 className="text-xl">Não tem conta aqui?</h1>
-                        <a href="/Register" className="font-bold text-green-500 text-5xl">Criar Conta</a>
+                        <a href="/register" className="font-bold text-green-500 text-5xl">Criar Conta</a>
                     </div>
                 </div>
             </div>
