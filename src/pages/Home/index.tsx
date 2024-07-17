@@ -47,19 +47,19 @@ function LineChart() {
     const options = {
         responsive: true,
         maintainAspectRatio: false, // Isso permite que o gráfico se estique para preencher a div
-        
+
         scales: {
             y: {
-                    ticks: {
-                        // Include a dollar sign in the ticks
-                        callback: function(value, index, ticks) {
-                            return 'R$ ' + value;
-                        }
-                    },
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function (value: any) {
+                        return 'R$ ' + value;
+                    }
+                },
                 beginAtZero: true,
             },
         },
-        
+
     };
     return (
         <div>
