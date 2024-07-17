@@ -9,7 +9,7 @@ export default function Header() {
     };
     return (
         <>
-            <div className="flex flex-row w-ful justify-between bg-gradient-to-r from-70% from-green-600 to-white">
+            <div className="flex flex-row overflow-scrollS w-ful justify-between bg-gradient-to-r from-70% from-green-600 to-white">
                 <div className="flex w-max items-center gap-1">
                     <img src={logo} alt="" className="flex w-10 h-10 p-1" />
                     <p className="text-center font-bold text-2xl ">
@@ -31,8 +31,9 @@ export default function Header() {
                     </div>
                     {/*link para logout*/}
                     <a onClick={handleLogout}>
-                        <div>
+                        <div className="flex flex-col items-center">
                             <img src={user} alt="" />
+                            Sair
                         </div>
                     </a>
                 </div>
