@@ -6,9 +6,9 @@ import logo from "../../../assets/logo.png";
 export default function About() {
     return (
         <>
-            <div className="flex flex-col p-4 w-full h-max justify-center items-center">
-                <div className='flex flex-col gap-2 items-center justify-between w-30 h-max'>
-                    <img src={logo} alt="logo da empresa Hoof Money" className=" w-28 h-full md:w-96 md:h-96 md:m-10 mb-0" />
+            <div className="flex flex-col p-4 gap-6 w-full h-max justify-center items-center">
+                <div className='flex flex-col gap-1 items-center justify-between w-30 h-max'>
+                    <img src={logo} alt="logo da empresa Hoof Money" className=" w-28 h-full md:w-96 md:h-96 md:m-2" />
                     <h1 className="font-semibold text-xl text-center w-full h-max">“Gerenciando seu futuro financeiro”</h1>
                 </div>
                 <div className="flex flex-row w-full md:h-max gap-3 text-center items-center justify-center">

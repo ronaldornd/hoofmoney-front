@@ -1,14 +1,18 @@
-import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import About from '../About';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import About from '../About';
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import { Link } from 'react-router-dom';
 
 
 export default function Login() {
+    const [email, setEmail] = useState('');
+    const [isEmailValid, setIsEmailValid] = useState(false);
+    const [password, setPassword] = useState('');
+
     const handleLoginClick = () => {
         // Aqui você geraria o token. Este é um exemplo estático.
         const token = "seuTokenGeradoAqui";
@@ -25,18 +29,9 @@ export default function Login() {
     // Função para exibir o popup
     const showPopup = () => {
         setIsPopupVisible(true);
-        // Opcional: esconder o popup após X segundos
+        //esconder o popup após X segundos
         setTimeout(() => window.location.href = '/', 5000);
 
-    };
-
-    const [email, setEmail] = useState('');
-    const [isEmailValid, setIsEmailValid] = useState(false);
-
-    // Definir uma função de validação
-    const validateEmail = (email: string) => {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
-        return re.test(String(email).toLowerCase());
     };
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,6 +39,28 @@ export default function Login() {
         setEmail(emailValue);
         // Chamar a função de validação
         setIsEmailValid(validateEmail(emailValue));
+    };
+
+    // Definir uma função de validação
+    const validateEmail = (email: string) => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
+        return re.test(String(email).toLowerCase());
+    };
+
+    // Função para verificar a senha
+    const verificarSenha = (password: string) => {
+        const criterios = {
+            comprimento: password.length >= 8,
+        };
+
+        return criterios;
+    };
+
+    // Manipulador de mudança de input
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(e.target.value);
+        const resultado = verificarSenha(e.target.value);
+        console.log(resultado); // Aqui você pode substituir por uma lógica para exibir os resultados na UI
     };
     return (
         <>
@@ -56,12 +73,12 @@ export default function Login() {
                         <div className="flex flex-col gap-2 p-10 w-full">
                             <Label htmlFor="email">Email</Label>
                             <Input type="email" id="email" placeholder="Digite seu email" onChange={handleEmailChange} />
-                            {/* Passo 4: Mostrar uma mensagem de erro se o email não for válido */}
-                            {!isEmailValid && <span className="text-red-500">Insira um email válido</span>}                            {/* Passo 4: Use uma condição para renderizar o campo de senha */}
+                            {/* Mostrar uma mensagem de erro se o email não for válido */}
+                            {!isEmailValid && <span className="text-red-500">Insira um email válido</span>}
                             {isEmailValid && (
                                 <>
                                     <Label htmlFor="password">Senha</Label>
-                                    <Input type="password" id="password" placeholder="Digite sua senha" />
+                                    <Input type="password" id="password" onChange={handlePasswordChange} placeholder="Digite sua senha" />
                                     <a onClick={showPopup} className="flex underline w-full justify-end">Esqueci minha senha</a>
                                     <AlertDialog.Root open={isPopupVisible}>
                                         <AlertDialog.Portal>

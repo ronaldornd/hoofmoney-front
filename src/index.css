@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  overflow: hidden; /* Isso irá desativar o scroll em toda a página */
-}
 @layer base {
   :root {
     --background: 0 0% 100%;

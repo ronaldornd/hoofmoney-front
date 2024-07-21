@@ -122,7 +122,7 @@ function DoughnutChart() {
 export default function Home() {
     return (
         <>
-            <div className="flex flex-col h-max w-screen md:h-screen">
+            <div className="flex flex-col h-max w-screen md:h-screen md:overflow-hidden">
 
                 <div className="w-screen h-max"><Header /></div>
                 <div className="flex flex-col md:grid grid-flow-col lg:grid-flow-row lg:grid-cols-3 p-2 gap-2 h-max w-full md:h-full justify-center">
