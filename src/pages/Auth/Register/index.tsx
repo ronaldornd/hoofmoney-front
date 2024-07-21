@@ -75,7 +75,7 @@ export default function Register() {
                         <div className="flex flex-row gap-3 w-full">
                             <div className="w-full">
                                 <Label htmlFor="name">Nome Completo</Label>
-                                <Input type="text" id="name" placeholder="Digite seu nome" onChange={(e) => {setNome(e.target.value)}}/>
+                                <Input type="text" id="name" placeholder="Digite seu nome" onChange={(e) => { setNome(e.target.value) }} />
                             </div>
                         </div>
                         <div>
@@ -94,9 +94,9 @@ export default function Register() {
                                 {isPasswordValid.especial ? <div className="text-sm text-green-500" >Especial</div> : <div className="text-sm text-red-500" >Especial</div>}
                             </span>
                             <span>
-                            <Label htmlFor="password">Confirme a Senha</Label>
-                            <Input type="password" id="re-password" placeholder="Digite novamente sua nova senha" onChange={(e) => {setConfirmarSenha(e.target.value)}}/>
-                            {conferirSenha(senha, confirmarSenha) ? <div className="text-sm text-green-500">Senhas conferem</div> : <div className="text-sm text-red-500">Senhas não conferem</div>}
+                                <Label htmlFor="password">Confirme a Senha</Label>
+                                <Input type="password" id="re-password" placeholder="Digite novamente sua nova senha" onChange={(e) => { setConfirmarSenha(e.target.value) }} />
+                                {conferirSenha(senha, confirmarSenha) ? <div className="text-sm text-green-500">Senhas conferem</div> : <div className="text-sm text-red-500">Senhas não conferem</div>}
                             </span>
                         </div>
                     </div>
@@ -107,6 +107,7 @@ export default function Register() {
                             <AlertDialog.Content className="flex flex-col gap-2 items-center w-ma fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-6">
                                 <AlertDialog.Title className="font-bold">Confirme seu email</AlertDialog.Title>
                                 <AlertDialog.Description className="flex flex-col gap-2 w-max items-center">
+                                    Obrigado por se cadastrar {nome}!
                                     <span>Um link foi enviado para o seu email.</span>
                                     <span>{email}</span>
                                 </AlertDialog.Description>
