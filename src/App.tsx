@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'; // Importe o Routes
-import { ToastContainer } from 'react-toastify';
 import Forget from './pages/Auth/Forget';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';

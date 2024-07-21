@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [isEmailValid, setIsEmailValid] = useState(false);
-    const [password, setPassword] = useState('');
 
     const handleLoginClick = () => {
         // Aqui você geraria o token. Este é um exemplo estático.
@@ -58,7 +57,7 @@ export default function Login() {
 
     // Manipulador de mudança de input
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
+        getPassword(e.target.value);
         const resultado = verificarSenha(e.target.value);
         console.log(resultado); // Aqui você pode substituir por uma lógica para exibir os resultados na UI
     };
