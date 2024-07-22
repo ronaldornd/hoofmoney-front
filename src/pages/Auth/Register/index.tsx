@@ -20,9 +20,11 @@ export default function Register() {
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const emailValue = e.target.value;
-        setEmail(emailValue);
         // Chamar a função de validação
         setIsEmailValid(validateEmail(emailValue));
+        if (isEmailValid) {
+            setEmail(emailValue);
+        }
     };
 
     // Definir uma função de validação
@@ -31,6 +33,14 @@ export default function Register() {
         return re.test(String(email).toLowerCase());
     };
 
+    // Manipulador de mudança de input
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const resultado = verificarSenha(e.target.value); 
+        setIsPasswordValid(resultado);
+        if (isPasswordValid){
+            setSenha(e.target.value);
+        }
+    };
     // Função para verificar a senha
     const verificarSenha = (senha: string) => {
         const criterios = {
@@ -42,17 +52,11 @@ export default function Register() {
 
         return criterios;
     };
-
+    // Função para verificar se a senha é igual a senha de confirmação
     const conferirSenha = (senha: string, confirmarSenha: string) => {
         return senha === confirmarSenha;
     }
 
-    // Manipulador de mudança de input
-    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSenha(e.target.value);
-        const resultado = verificarSenha(e.target.value);
-        setIsPasswordValid(resultado);
-    };
 
     const [isPopupVisible, setIsPopupVisible] = useState(false);
 
