@@ -1,0 +1,25 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.error-message {
+  color: #db2828; /* Correspondente ao text-red-500 do Tailwind */
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.reset-password-modal {
+  max-width: 500px; /* Ajuste conforme necessário */
+  margin: auto;
+  /* Estilos adicionais para centralizar o modal, se necessário */
+}

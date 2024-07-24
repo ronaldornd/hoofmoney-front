@@ -414,8 +414,8 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="flex flex-row gap-2 h-max w-full p-2">
-                                <div className="flex w-full p-2 overflow-x-auto snap-x snap-mandatory gap-2 md:flex-row">
-                                    <div className="snap-start w-full md:w-1/2 flex-shrink-0">
+                                <div className="flex w-full overflow-x-auto snap-x snap-mandatory md:flex-row">
+                                    <div className="snap-start w-full md:w-1/2 flex-shrink-0 p-2">
                                         <div className="flex flex-col h-max w-full border rounded border-green-500 bg-green-100 items-center">
                                             <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight p-1 m-2">Ultimas Receitas</h1>
                                             <div className="flex flex-col w-full h-full items-center p-2">
@@ -444,7 +444,7 @@ export default function Home() {
 
                                         </div>
                                     </div>
-                                    <div className="snap-start w-full md:w-1/2 flex-shrink-0">
+                                    <div className="snap-start w-full md:w-1/2 flex-shrink-0 p-2">
                                         <div className="flex flex-col h-max w-full border rounded border-red-500 bg-red-100 items-center">
                                             <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight p-1 m-2">Ultimas Despesas</h1>
                                             <div className="flex flex-col w-full h-full items-center p-2">
