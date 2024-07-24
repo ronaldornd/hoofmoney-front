@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import About from "../About";
-import { Form, Input, Button, Modal, Header } from 'semantic-ui-react';
-import './customStyles.css'; // Importando o CSS customizado
-
+import {
+  Form,
+  Input,
+  Button,
+  Modal,
+  Header,
+  Container,
+} from "semantic-ui-react";
+import "./customStyles.css"; // Importando o CSS customizado
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -115,12 +122,20 @@ export default function Login() {
                   </Modal>
                 </>
               )}
-              <Button
-                        onClick={() => handleLoginClick}
-                        type="submit"
-                      ></Button>
+              <Button onClick={() => handleLoginClick} type="submit"></Button>
             </Form>
           </div>
+          <Container textAlign="center">
+            <Header as="h1" className="ou-header">
+              - OU -
+            </Header>
+            <Header as="h1" className="no-account-header">
+              Não tem conta aqui?
+            </Header>
+            <div className="create-account-link">
+              <Link to="/register">Criar Conta</Link>
+            </div>
+          </Container>
         </div>
       </div>
     </>

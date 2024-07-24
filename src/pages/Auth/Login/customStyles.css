@@ -23,3 +23,31 @@
   margin: auto;
   /* Estilos adicionais para centralizar o modal, se necessário */
 }
+
+.ou-header {
+  width: 100%;
+  text-align: center;
+  font-size: 1.875rem; /* Correspondente a text-3xl */
+  font-weight: 200; /* Correspondente a font-extralight */
+}
+
+.no-account-header {
+  width: 100%;
+  text-align: center;
+  font-size: 1.25rem; /* Correspondente a text-xl */
+}
+
+.create-account-link {
+  font-weight: 700; /* Correspondente a font-bold */
+  color: #48bb78; /* Correspondente a text-green-500, ajuste a cor conforme necessário */
+  font-size: 3rem; /* Correspondente a text-5xl */
+  display: block; /* Garante que o link ocupe sua própria linha */
+  margin-top: 1rem; /* Espaçamento acima do link */
+}
+
+.create-account-link a {
+  color: inherit; /* Faz o link herdar a cor do texto do div pai */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+/* Certifique-se de ajustar os estilos conforme necessário para corresponder ao seu design */
